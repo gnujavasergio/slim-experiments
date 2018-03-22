@@ -1,8 +1,10 @@
 <?php
 
-/* 
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
+require '../vendor/autoload.php';
+$settings = require '../src/settings.php';
 
+$app = new \Slim\App($settings);
+
+require '../src/dependencies.php';
+require '../src/routes.php';
+$app->run();
