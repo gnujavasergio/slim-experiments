@@ -10,3 +10,14 @@ $container['logger'] = function($c) {
     return $logger;
 };
 
+$container['view'] = function($c) {
+    $settings = $c->get('settings')['renderer'];
+    return new \Slim\Views\PhpRenderer($settings['template_path']);
+};
+
+$container['db'] = function($c) {
+    $settings = $c->get('settings')['db'];
+    $database = new \Medoo\Medoo($settings);
+    return $database;
+};
+
