@@ -19,3 +19,4 @@ $app->get('/home/[{name}]', function(Request $request, Response $response, array
 });
 
 $app->get('/users', '\App\Controllers\UserController:users')->setName('mt');
+$app->get('/users/show', '\App\Controllers\UserController:show')->setName('mt');
