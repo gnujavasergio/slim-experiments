@@ -18,5 +18,5 @@ $app->get('/home/[{name}]', function(Request $request, Response $response, array
     return $this->view->render($response, 'index.phtml', $args);
 });
 
-$app->get('/users', '\App\Controllers\UserController:users')->setName('mt');
+$app->get('/users', '\App\Controllers\UserController:users')->setName('users')->add('\App\Middlewares\ExampleMiddleware');
 $app->get('/users/show', '\App\Controllers\UserController:show')->setName('mt');
